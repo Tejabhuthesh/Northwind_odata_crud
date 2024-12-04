@@ -1,0 +1,34 @@
+<mvc:View controllerName="znorthwindcrudtest.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+       <content>
+            <VBox class="sapUiSmallMargin">
+                <!-- Create Section -->
+                <HBox>
+                    <Input id="productNameInput" placeholder="Enter Product Name" width="200px"/>
+                    <Input id="productPriceInput" placeholder="Enter Product Price" width="200px"/>
+                    <Button text="Create Product" press="onCreateProduct"/>
+                </HBox>
+                 <!-- Update Section -->
+                <HBox>
+                    <Input id="updateNameInput" placeholder="Update Product Name" width="200px"/>
+                    <Input id="updatePriceInput" placeholder="Update Product Price" width="200px"/>
+                    <Button text="Update Product" press="onUpdateProduct"/>
+                </HBox>
+                <!-- Delete Button -->
+                <Button text="Delete Product" press="onDeleteProduct" class="sapUiSmallMargin"/>
+                <!-- Product List -->
+                <List id="productList" items="{/Categories}" mode="Delete" delete="onDelete">
+                    <StandardListItem
+                        title="{ID}"
+                        description="{Name}"
+                        type="Active"
+                        press="onProductSelect"/>
+                </List>
+                
+               
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
